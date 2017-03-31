@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from fbprophet import Prophet
-
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('mexico.csv')
 df['y'] = np.log(df['y'])
@@ -19,3 +19,4 @@ forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 
 m.plot(forecast);
 m.plot_components(forecast);
+plt.show()
